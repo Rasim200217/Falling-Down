@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,57 @@ public class Platform : MonoBehaviour
 
         if (temp.y >= BoundY)
             gameObject.SetActive(false);
-        
     }
+
+     void BreakableDeactivate()
+     {
+         Invoke("DeactivateGamObject", 0.5f);
+     }
+
+     void DeactivateGamObject()
+     {
+         gameObject.SetActive(false);
+     }
+
+     void OnTriggerEnter2D(Collider2D other)
+     {
+         if (other.tag == "Player")
+         {
+             if (IsSpike)
+             {
+                 other.transform.position = new Vector3(1000f, 1000f);
+             }
+         }
+     }
+
+     void OnCollisionEnter2D(Collision2D other)
+     {
+         if (other.gameObject.tag == "Player")
+         {
+             if (IsBreakable)
+             {
+                 _animator.Play("Break");
+             }
+
+             if (IsPlatform)
+             {
+                 
+             }
+         }
+     }
+
+     void OnCollisionStay2D(Collision2D other)
+     {
+         if (other.gameObject.tag == "Player")
+         {
+             if (MovingPlatformLeft)
+             {
+                 other.gameObject.GetComponent<PlayerMovement>().PlatformMove(-1f);
+             }
+             if (MovingPlatformRight)
+             {
+                 other.gameObject.GetComponent<PlayerMovement>().PlatformMove(1f);
+             }
+         }
+     }
 }

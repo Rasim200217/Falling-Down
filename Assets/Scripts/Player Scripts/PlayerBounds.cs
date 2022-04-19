@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,6 +33,14 @@ public class PlayerBounds : MonoBehaviour
             {
                 _outOfBounds = true;
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "TopSpike")
+        {
+            transform.position = new Vector3(1000f, 1000f);
         }
     }
 }
