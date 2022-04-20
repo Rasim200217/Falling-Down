@@ -1,18 +1,40 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static SoundManager Instance;
+
+    private AudioSource _soundFx;
+
+    [SerializeField] private AudioClip _landClip, _deathClip, _iceBreakClip, _gameOverClip;
+
+    private void Awake()
     {
-        
+        if (Instance == null)
+            Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void LandSound()
     {
-        
+        _soundFx.clip = _landClip;
+        _soundFx.Play();
+    }
+    public void IceBreakSound()
+    {
+        _soundFx.clip = _iceBreakClip;
+        _soundFx.Play();
+    }
+    public void DeathSound()
+    {
+        _soundFx.clip = _deathClip;
+        _soundFx.Play();
+    }
+    public void GameOverSound()
+    {
+        _soundFx.clip = _gameOverClip;
+        _soundFx.Play();
     }
 }
