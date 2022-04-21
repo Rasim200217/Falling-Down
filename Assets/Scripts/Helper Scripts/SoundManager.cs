@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
 
-    private AudioSource _soundFx;
+    [SerializeField] AudioSource _soundFx;
 
     [SerializeField] private AudioClip _landClip, _deathClip, _iceBreakClip, _gameOverClip;
 

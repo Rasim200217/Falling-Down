@@ -37,11 +37,12 @@ public class Platform : MonoBehaviour
 
      void BreakableDeactivate()
      {
-         Invoke("DeactivateGamObject", 0.5f);
+         Invoke("DeactivateGamObject", 0.3f);
      }
 
      void DeactivateGamObject()
      {
+         SoundManager.Instance.IceBreakSound();
          gameObject.SetActive(false);
      }
 
@@ -52,6 +53,8 @@ public class Platform : MonoBehaviour
              if (IsSpike)
              {
                  other.transform.position = new Vector3(1000f, 1000f);
+                 SoundManager.Instance.GameOverSound();
+                 GameManager.Instance.RestartGame();
              }
          }
      }
@@ -62,12 +65,13 @@ public class Platform : MonoBehaviour
          {
              if (IsBreakable)
              {
+                 SoundManager.Instance.LandSound();
                  _animator.Play("Break");
              }
 
              if (IsPlatform)
              {
-                 
+                 SoundManager.Instance.LandSound();
              }
          }
      }

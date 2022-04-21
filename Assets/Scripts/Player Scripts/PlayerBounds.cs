@@ -32,6 +32,9 @@ public class PlayerBounds : MonoBehaviour
             if (!_outOfBounds)
             {
                 _outOfBounds = true;
+                
+                SoundManager.Instance.DeathSound();
+                GameManager.Instance.RestartGame();
             }
         }
     }
@@ -41,6 +44,8 @@ public class PlayerBounds : MonoBehaviour
         if (other.tag == "TopSpike")
         {
             transform.position = new Vector3(1000f, 1000f);
+            SoundManager.Instance.DeathSound();
+            GameManager.Instance.RestartGame();
         }
     }
 }
