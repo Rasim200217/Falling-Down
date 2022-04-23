@@ -82,11 +82,11 @@ public class Platform : MonoBehaviour
          {
              if (MovingPlatformLeft)
              {
-                 other.gameObject.GetComponent<PlayerMovement>().PlatformMove(-1f);
+                 other.gameObject.GetComponent<Player>().PlatformMove(-1f);
              }
              if (MovingPlatformRight)
              {
-                 other.gameObject.GetComponent<PlayerMovement>().PlatformMove(1f);
+                 other.gameObject.GetComponent<Player>().PlatformMove(1f);
              }
          }
      }

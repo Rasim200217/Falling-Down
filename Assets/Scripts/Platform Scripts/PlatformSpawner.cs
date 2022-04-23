@@ -10,7 +10,7 @@ public class PlatformSpawner : MonoBehaviour
     public GameObject[] MovingPlatforms;
     public GameObject BreakablePlatform;
 
-    public float PlatformSpawnTimer = 1.8f;
+    public float PlatformSpawnTimer = 1.2f;
     private float _currentPlatformSpawnTimer;
 
     private int _platformSpawnCount;
