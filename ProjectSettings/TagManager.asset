@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - TopSpike
+  - Enemy
   layers:
   - Default
   - TransparentFX

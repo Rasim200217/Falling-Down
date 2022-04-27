@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     {
         Invoke("RestarteAfterTime", 2f);
     }
+    
+  
 
     void RestarteAfterTime()
     {

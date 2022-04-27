@@ -16,4 +16,13 @@ public class Player : MonoBehaviour
     {
         _rigidbody2D.velocity = new Vector2(x, _rigidbody2D.velocity.y);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            SoundManager.Instance.DeathSound();
+            GameManager.Instance.RestartGame();
+        }
+    }
 }
