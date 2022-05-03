@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Invoke("RestarteAfterTime", 2f);
+        Invoke("RestarteAfterTime", 0.5f);
     }
     
   
