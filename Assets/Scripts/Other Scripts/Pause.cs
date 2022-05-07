@@ -25,4 +25,9 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         _panelPause.SetActive(false);
     }
+
+    public void RestartBtn()
+    {
+        GameManager.Instance.RestartGame();
+    }
 }
