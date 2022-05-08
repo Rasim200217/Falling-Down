@@ -9,7 +9,7 @@ public class PlayerBounds : MonoBehaviour
     public float MinX = -2.6f, MaxX = 2.6f, MinY = -5.6f;
 
     private bool _outOfBounds;
-    
+
     void Update()
     {
         CheckBounds();
@@ -34,6 +34,8 @@ public class PlayerBounds : MonoBehaviour
                 _outOfBounds = true;
                 
                 SoundManager.Instance.DeathSound();
+
+
                 GameManager.Instance.RestartGame();
             }
         }
@@ -45,6 +47,7 @@ public class PlayerBounds : MonoBehaviour
         {
             transform.position = new Vector3(1000f, 1000f);
             SoundManager.Instance.DeathSound();
+
             GameManager.Instance.RestartGame();
         }
     }

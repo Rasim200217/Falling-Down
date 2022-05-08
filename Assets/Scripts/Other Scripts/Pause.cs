@@ -2,10 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     private GameObject _panelPause;
+
+    private GameObject _panelDead;
 
 
     private void Start()
@@ -28,6 +31,15 @@ public class Pause : MonoBehaviour
 
     public void RestartBtn()
     {
+        Time.timeScale = 1;
         GameManager.Instance.RestartGame();
+        _panelPause.SetActive(false);
     }
+
+    public void ExitMenuBtn()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 0);
+        Time.timeScale = 1;
+    }
+
 }
