@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5587983932507714096}
   - component: {fileID: 5587983932507714111}
   - component: {fileID: 5587983932507714110}
+  - component: {fileID: 3859963110230532138}
   m_Layer: 0
   m_Name: Star
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,3 +163,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3859963110230532138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5587983932507714099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c6fbc8c11996d4a9c2d36b7a9db1ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
