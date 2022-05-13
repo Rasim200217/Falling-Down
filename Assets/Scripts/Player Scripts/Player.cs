@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         {
             SoundManager.Instance.DeathSound();
             GameManager.Instance.RestartGame();
+            gameObject.SetActive(false);
         }
     }
 }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
+    public static int num;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if(collision.CompareTag("Player"))
         {
-            StarText.Star += 1;
+            num = StarText.Star += 1;
             Destroy(gameObject);
         }
     }

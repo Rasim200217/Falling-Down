@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public ParticleSystem _death;
+    public GameObject _death;
     public static GameManager Instance;
 
-    [SerializeField] private Transform _playerTarget;
+    public GameObject _playerTarget;
+
+    public GameOver GameOver;
+    
 
     private void Awake()
     {
@@ -21,9 +24,13 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Invoke("RestarteAfterTime", 1f);
         StarText.Star = 0;
-        Instantiate(_death, transform.position, Quaternion.identity);
+        Instantiate(_death, _playerTarget.transform.position, Quaternion.identity);
+        Invoke("RestarteAfterTime", 1f);
+        _playerTarget.SetActive(false);
+        GameOver.Setup(Star.num);
+        Debug.Log(Star.num);
+        Time.timeScale = 0f;
     }
     
   

@@ -33,6 +33,7 @@ public class Pause : MonoBehaviour
     {
         Time.timeScale = 1;
         GameManager.Instance.RestartGame();
+        SoundManager.Instance.GameOverSound();
         _panelPause.SetActive(false);
     }
 
