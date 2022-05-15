@@ -7,12 +7,13 @@ using UnityEngine.UI;
 public class GameOver : MonoBehaviour
 {
     public Text PointsText;
+    public Text TimeText;
     
 
-    public void Setup(int score)
+    public void Setup(int score, float time)
     {
         gameObject.SetActive(true);
         PointsText.text = score.ToString() + " STARS";
-        Debug.Log(PointsText);
+        TimeText.text = Mathf.Round(Timer.TimeStart).ToString() + " sec";
     }
 }

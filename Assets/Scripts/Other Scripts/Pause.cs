@@ -31,10 +31,10 @@ public class Pause : MonoBehaviour
 
     public void RestartBtn()
     {
-        Time.timeScale = 1;
         GameManager.Instance.RestartGame();
         SoundManager.Instance.GameOverSound();
         _panelPause.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void ExitMenuBtn()
