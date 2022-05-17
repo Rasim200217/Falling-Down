@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
     public void Setup(int score, float time)
     {
         gameObject.SetActive(true);
-        PointsText.text = score.ToString() + " STARS";
+        PointsText.text = score.ToString() + "";
         TimeText.text = Mathf.Round(Timer.TimeStart).ToString() + " sec";
     }
 }
