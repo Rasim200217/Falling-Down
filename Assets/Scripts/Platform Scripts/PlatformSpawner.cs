@@ -53,7 +53,7 @@ public class PlatformSpawner : MonoBehaviour
                     newPlatform = Instantiate(MovingPlatforms[Random.Range(0, MovingPlatforms.Length)], temp, Quaternion.identity);
 
                 }
-            }else if(_platformSpawnCount == 3)
+            }else if(_platformSpawnCount == 5)
             {
                 if (Random.Range(0, 2) > 0)
                 {

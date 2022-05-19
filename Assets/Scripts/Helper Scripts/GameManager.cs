@@ -24,12 +24,10 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        StarText.Star = 0;
         Instantiate(_death, _playerTarget.transform.position, Quaternion.identity);
         Invoke("RestarteAfterTime", 1f);
         _playerTarget.SetActive(false);
         GameOver.Setup(Star.num, Timer.TimeStart);
-        Debug.Log(Star.num);
         Time.timeScale = 0f;
     }
     
