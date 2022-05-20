@@ -2,24 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
     public static int num;
+    public Text CountStarText;
 
-    private void Awake()
+    private void Start()
     {
-        
+        CountStarText.text = num.ToString();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Star"))
         {
-            num = PlayerPrefs.GetInt("star");
-            PlayerPrefs.SetInt("star", StarText.Star += 1);
-            Destroy(gameObject);
+            num = num++;
+            CountStarText.text = num.ToString();
+            Destroy(collision.gameObject);
+            
+            Debug.Log(num);
         }
     }
 }
