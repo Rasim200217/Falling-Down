@@ -19,11 +19,9 @@ public class Star : MonoBehaviour
         
         if(collision.CompareTag("Star"))
         {
-            num = num++;
+            num++;
             CountStarText.text = num.ToString();
             Destroy(collision.gameObject);
-            
-            Debug.Log(num);
         }
     }
 }
