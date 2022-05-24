@@ -6,7 +6,7 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
 
-    public float MoveSpeed = 2f;
+    public float MoveSpeed = 1.5f;
     public float BoundY = 6f;
 
     public bool MovingPlatformLeft, MovingPlatformRight, IsBreakable, IsSpike, IsPlatform;

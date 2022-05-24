@@ -13,7 +13,7 @@ public class Pause : MonoBehaviour
 
     private void Start()
     {
-        _panelPause = transform.GetChild(4).gameObject;
+        _panelPause = transform.GetChild(5).gameObject;
         _panelPause.SetActive(false);
     }
 
@@ -34,7 +34,9 @@ public class Pause : MonoBehaviour
         GameManager.Instance.RestartGame();
         SoundManager.Instance.GameOverSound();
         _panelPause.SetActive(false);
+        AdsCore.ShowAdsVideo("Interstitial_Android");
         Time.timeScale = 1;
+       
     }
 
     public void ExitMenuBtn()
