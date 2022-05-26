@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    private GameObject _panelOptions;
+    [SerializeField] private GameObject _panelOptions;
+   [SerializeField] private GameObject _shopPlayerPanel;
     
     private void Start()
     {
-        _panelOptions = transform.GetChild(4).gameObject;
         _panelOptions.SetActive(false);
+        _shopPlayerPanel.SetActive(false);
     }
 
 
@@ -33,5 +34,14 @@ public class Menu : MonoBehaviour
     public void CancelOptions()
     {
         _panelOptions.SetActive(false);
+    }
+    public void ShopOpen()
+    {
+        _shopPlayerPanel.SetActive(true);
+    }
+    
+    public void ShopExit()
+    {
+        _shopPlayerPanel.SetActive(false);
     }
 }

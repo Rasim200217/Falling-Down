@@ -34,7 +34,7 @@ public class Pause : MonoBehaviour
         GameManager.Instance.RestartGame();
         SoundManager.Instance.GameOverSound();
         _panelPause.SetActive(false);
-        AdsCore.ShowAdsVideo("Interstitial_Android");
+        //AdsCore.ShowAdsVideo("Interstitial_Android");
         Time.timeScale = 1;
        
     }
