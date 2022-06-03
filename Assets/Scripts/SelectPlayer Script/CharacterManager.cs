@@ -11,6 +11,7 @@ public class CharacterManager : MonoBehaviour
 
     public Text NameText;
     public SpriteRenderer ArtworkSprite;
+    public Image AtworkImage;
     
     private int _selectedOption = 0;
 
@@ -53,6 +54,7 @@ public class CharacterManager : MonoBehaviour
     {
         Character character = CharacterDatabase.GetCharacter(selectedOption);
         ArtworkSprite.sprite = character.CharacterSprite;
+        AtworkImage.sprite = character.CharacterSprite;
         NameText.text = character.CharacterName;
     }
 
