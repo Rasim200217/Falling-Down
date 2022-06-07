@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Character Database
   m_EditorClassIdentifier: 
   Characters:
-  - CharacterName: Default
+  - CharacterName: Red Cube
     CharacterSprite: {fileID: 21300000, guid: a823cd087575e9144a49c6ede4ef7665, type: 3}
-  - CharacterName: Test
-    CharacterSprite: {fileID: -7642239419928554605, guid: e23a610e136a63347bf66fcda884694c,
-      type: 3}
+    CharacterPrice: 0
+  - CharacterName: Blue Cube
+    CharacterSprite: {fileID: 21300000, guid: f795ceafff006054b81b095eae0d347d, type: 3}
+    CharacterPrice: 2

@@ -10,6 +10,7 @@ public class CharacterManager : MonoBehaviour
     public CharacterDatabase CharacterDatabase;
 
     public Text NameText;
+    public Text PriceText;
     public SpriteRenderer ArtworkSprite;
     public Image AtworkImage;
     
@@ -26,6 +27,7 @@ public class CharacterManager : MonoBehaviour
         UpdateCharacter(_selectedOption);
     }
 
+    
     public void NextOption()
     {
         _selectedOption++;
@@ -56,6 +58,8 @@ public class CharacterManager : MonoBehaviour
         ArtworkSprite.sprite = character.CharacterSprite;
         AtworkImage.sprite = character.CharacterSprite;
         NameText.text = character.CharacterName;
+        PriceText.text = character.CharacterPrice.ToString();
+        
     }
 
     private void Load()

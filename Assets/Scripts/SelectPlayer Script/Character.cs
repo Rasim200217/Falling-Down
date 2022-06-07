@@ -8,4 +8,5 @@ public class Character
 {
     public string CharacterName;
     public Sprite CharacterSprite;
+    public int CharacterPrice;
 }

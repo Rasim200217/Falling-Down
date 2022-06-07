@@ -9,6 +9,12 @@ public class Star : MonoBehaviour
     public static int num;
     public Text CountStarText;
 
+
+    private void Awake()
+    {
+        num = PlayerPrefs.GetInt("starPoint", 0);
+    }
+
     private void Start()
     {
         CountStarText.text = num.ToString();
@@ -21,6 +27,7 @@ public class Star : MonoBehaviour
         {
             num++;
             CountStarText.text = num.ToString();
+            PlayerPrefs.SetInt("starPoint", num);
             Destroy(collision.gameObject);
         }
     }
