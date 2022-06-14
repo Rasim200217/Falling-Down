@@ -876,7 +876,6 @@ GameObject:
   m_Component:
   - component: {fileID: 274054695}
   - component: {fileID: 274054696}
-  - component: {fileID: 274054697}
   - component: {fileID: 274054698}
   m_Layer: 0
   m_Name: Sound Manager
@@ -911,24 +910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65a193b431cca847b780d5dd5b6990d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundFx: {fileID: 274054698}
+  _soundFx: {fileID: 1295314858}
   _landClip: {fileID: 8300000, guid: 5b572e061ce4aec4bb000d74be2d7c65, type: 3}
   _deathClip: {fileID: 8300000, guid: 38bc902c406cfcf41ac848102443576b, type: 3}
   _iceBreakClip: {fileID: 8300000, guid: 2baddb5f0dda6af4e88c006591ae4af6, type: 3}
   _gameOverClip: {fileID: 8300000, guid: d718334839c00244780636c051808e00, type: 3}
---- !u!114 &274054697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274054694}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e8a701d0337a64b973e02a9afc5c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MusicAudio: {fileID: 1295314858}
 --- !u!82 &274054698
 AudioSource:
   m_ObjectHideFlags: 0
@@ -939,9 +925,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e2070c0f228f5de4484acf51790b3942, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2377,7 +2363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -150, y: 150}
+  m_AnchoredPosition: {x: -180, y: 150}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029115358

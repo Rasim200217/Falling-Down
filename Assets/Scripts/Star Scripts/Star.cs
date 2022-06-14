@@ -6,20 +6,17 @@ using UnityEngine.UI;
 
 public class Star : MonoBehaviour
 {
-    public static int num;
+    public static int num = 0;
     public Text CountStarText;
-
+    
 
     private void Awake()
     {
         num = PlayerPrefs.GetInt("starPoint", 0);
-    }
-
-    private void Start()
-    {
         CountStarText.text = num.ToString();
-    }
 
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         

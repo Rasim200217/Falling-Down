@@ -2,9 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
+
     public static SoundManager Instance;
 
     [SerializeField] AudioSource _soundFx;
@@ -37,4 +39,5 @@ public class SoundManager : MonoBehaviour
         _soundFx.clip = _gameOverClip;
         _soundFx.Play();
     }
+    
 }

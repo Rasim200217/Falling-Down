@@ -19,3 +19,6 @@ MonoBehaviour:
   - CharacterName: Blue Cube
     CharacterSprite: {fileID: 21300000, guid: f795ceafff006054b81b095eae0d347d, type: 3}
     CharacterPrice: 2
+  - CharacterName: Girl Cube
+    CharacterSprite: {fileID: 21300000, guid: 2f9d9b4b34a83774c83163ebb49bfd77, type: 3}
+    CharacterPrice: 2
