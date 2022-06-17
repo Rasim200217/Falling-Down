@@ -9,7 +9,6 @@ public class PlatformSpawner : MonoBehaviour
     public GameObject SpikePlatformPrefab;
     public GameObject[] MovingPlatforms;
     public GameObject BreakablePlatform;
-    public GameObject[] EnemyPlatform;
 
     public float PlatformSpawnTimer = 1.2f;
     private float _currentPlatformSpawnTimer;
@@ -66,18 +65,6 @@ public class PlatformSpawner : MonoBehaviour
                 }
             }
             else if (_platformSpawnCount == 4)
-            {
-                if (Random.Range(0, 2) > 0)
-                {
-                    newPlatform = Instantiate(PlatformPrefab, temp, Quaternion.identity);
-                }
-                else
-                {
-                    newPlatform = Instantiate(EnemyPlatform[Random.Range(0, EnemyPlatform.Length)], temp, Quaternion.identity);
-
-                }
-            }
-            else if (_platformSpawnCount == 5)
             {
                 if (Random.Range(0, 2) > 0)
                 {

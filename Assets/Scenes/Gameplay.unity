@@ -2062,9 +2062,6 @@ MonoBehaviour:
   - {fileID: 4259877203854592078, guid: 027bfcd2a1fb0a2439eeebdc25815dbe, type: 3}
   BreakablePlatform: {fileID: 571810684440327168, guid: 8407abfbcffcfb3439617952637451ba,
     type: 3}
-  EnemyPlatform:
-  - {fileID: 6805651875580748885, guid: 2674cbfbf8e5e1a46967b088333ea290, type: 3}
-  - {fileID: 7578443361230024122, guid: b0dc4c8f1183d2c4d983b6ced63c3d6f, type: 3}
   PlatformSpawnTimer: 1
   MinX: -1.7
   MaxX: 1.7
