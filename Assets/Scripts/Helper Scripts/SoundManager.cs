@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
 
+    [SerializeField] private Slider _volumeSlider = null;
+
+
     public static SoundManager Instance;
 
     [SerializeField] AudioSource _soundFx;
@@ -17,6 +20,22 @@ public class SoundManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        LoadValues();
+    }
+
+    public void SaveVolumeButton()
+    {
+        float volumeValue = _volumeSlider.value;
+        PlayerPrefs.SetFloat("volumeValue", volumeValue);
+        LoadValues();
+    }
+
+    private void LoadValues()
+    {
+        float volumeValue = PlayerPrefs.GetFloat("volumeValue");
+        _volumeSlider.value = volumeValue;
+        AudioListener.volume = volumeValue;
     }
 
     public void LandSound()
