@@ -8,9 +8,13 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject _panelOptions;
    [SerializeField] private GameObject _shopPlayerPanel;
+
+   public static Menu _menu;
     
     private void Start()
     {
+        _menu = this;
+        
         _panelOptions.SetActive(false);
         _shopPlayerPanel.SetActive(false);
     }

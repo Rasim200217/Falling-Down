@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
@@ -29,6 +30,9 @@ public class SoundManager : MonoBehaviour
         float volumeValue = _volumeSlider.value;
         PlayerPrefs.SetFloat("volumeValue", volumeValue);
         LoadValues();
+        
+        if(SceneManager.GetSceneByBuildIndex(0).isLoaded)
+            Menu._menu.CancelOptions();
     }
 
     private void LoadValues()

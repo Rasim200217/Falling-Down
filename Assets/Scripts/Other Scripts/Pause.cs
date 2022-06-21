@@ -10,7 +10,7 @@ public class Pause : MonoBehaviour
 
     private GameObject _panelDead;
 
-
+    
     private void Start()
     {
         _panelPause = transform.GetChild(5).gameObject;
