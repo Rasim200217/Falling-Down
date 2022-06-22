@@ -30,6 +30,7 @@ public class PlatformSpawner : MonoBehaviour
     void SpawnPlatform()
     {
         _currentPlatformSpawnTimer += Time.deltaTime;
+        
         if(_currentPlatformSpawnTimer >= PlatformSpawnTimer)
         {
             _platformSpawnCount++;

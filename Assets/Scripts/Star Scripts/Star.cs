@@ -13,10 +13,15 @@ public class Star : MonoBehaviour
     private void Awake()
     {
         num = PlayerPrefs.GetInt("starPoint", 0);
-        CountStarText.text = num.ToString();
-
+        CountStarText.text = ""+ PlayerPrefs.GetInt("starPoint", 0);
+        PlayerPrefs.SetInt("starPoint", num);
     }
-    
+
+    private void Update()
+    {
+        CountStarText.text = "" + PlayerPrefs.GetInt("starPoint", 0);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
