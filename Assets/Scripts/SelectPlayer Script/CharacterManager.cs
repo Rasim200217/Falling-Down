@@ -12,18 +12,18 @@ public class CharacterManager : MonoBehaviour
     
 
     public Text NameText;
-    public Text PriceText;
     public SpriteRenderer ArtworkSprite;
     public Image AtworkImage;
     
     private int _selectedOption = 0;
 
     public Button UnlockButton;
-    public TextMeshProUGUI starCoinText;
+    public Text starCoinText;
 
 
     private void Awake()
     {
+
         if (!PlayerPrefs.HasKey("selectedOption"))
             _selectedOption = 0;
         else
@@ -44,13 +44,7 @@ public class CharacterManager : MonoBehaviour
         UpdateUI();
         
     }
-
-    private void Start()
-    {
-      
-        
-        
-    }
+    
     
     public void NextOption()
     {
@@ -59,9 +53,10 @@ public class CharacterManager : MonoBehaviour
         if (_selectedOption >= CharacterDatabase.CharacterCount)
             _selectedOption = 0;
         
-       
         UpdateCharacter(_selectedOption);
-        Save();
+        
+        if(CharacterDatabase.Characters[_selectedOption].IsUnlocked) 
+            Save();
         
         UpdateUI();
     }
@@ -73,21 +68,22 @@ public class CharacterManager : MonoBehaviour
         if (_selectedOption < 0)
             _selectedOption = CharacterDatabase.CharacterCount - 1;
         
+      
         UpdateCharacter(_selectedOption);
-        Save();
+        
+        if(CharacterDatabase.Characters[_selectedOption].IsUnlocked) 
+            Save();
         
         UpdateUI();
     }
 
-    private void UpdateCharacter(int selectedOption)
+    public void UpdateCharacter(int selectedOption)
     {
         Character character = CharacterDatabase.GetCharacter(selectedOption);
         ArtworkSprite.sprite = character.CharacterSprite;
         AtworkImage.sprite = character.CharacterSprite;
         NameText.text = character.CharacterName;
-        PriceText.text = character.CharacterPrice.ToString();
-        
-    }
+  }
 
     private void Load()
     {
@@ -111,8 +107,8 @@ public class CharacterManager : MonoBehaviour
             UnlockButton.gameObject.SetActive(false);
         else
         {
-            UnlockButton.GetComponentInChildren<TextMeshProUGUI>().text =
-                "Price: " + CharacterDatabase.Characters[_selectedOption].CharacterPrice;
+            UnlockButton.GetComponentInChildren<Text>().text =
+                "" + CharacterDatabase.Characters[_selectedOption].CharacterPrice;
             if (PlayerPrefs.GetInt("starPoint", 0) < CharacterDatabase.Characters[_selectedOption].CharacterPrice)
             {
                 UnlockButton.gameObject.SetActive(true);

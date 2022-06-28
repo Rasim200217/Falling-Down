@@ -30,6 +30,7 @@ public class SkinPlayer : MonoBehaviour
     }
 
     private void Load()
+    
     {
         _selectedOption = PlayerPrefs.GetInt("selectedOption");
     }
