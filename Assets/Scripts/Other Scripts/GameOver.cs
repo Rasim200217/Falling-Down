@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
     public Text TimeText;
     
 
+
     public void Setup(int score, float time)
     {
         gameObject.SetActive(true);
