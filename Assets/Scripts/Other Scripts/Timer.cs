@@ -10,11 +10,16 @@ public class Timer : MonoBehaviour
     public Text TimerText;
     public Text HighTimerText;
 
+    public Font font;
+
     private int _timeHigh;
     void Start()
     {
+        
         TimeStart = 0;
         TimerText.text = TimeStart.ToString();
+        TimerText.font = font;
+        HighTimerText.font = font;
     }
 
     // Update is called once per frame
@@ -22,11 +27,11 @@ public class Timer : MonoBehaviour
     {
         _timeHigh = (int)TimeStart;
         TimeStart += Time.deltaTime;
-        TimerText.text = "Time: " + Mathf.Round(TimeStart).ToString();
+        TimerText.text = "Время: " + Mathf.Round(TimeStart).ToString();
 
         if (PlayerPrefs.GetInt("time") <= _timeHigh)
             PlayerPrefs.SetInt("time", _timeHigh);
 
-        HighTimerText.text = "HighTime " + PlayerPrefs.GetInt("time").ToString();
+        HighTimerText.text = "Рекорд: " + PlayerPrefs.GetInt("time").ToString();
     }
 }

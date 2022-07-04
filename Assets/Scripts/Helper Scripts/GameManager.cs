@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
     }
-
+    
     public void RestartGame()
     {
         Instantiate(_death, _playerTarget.transform.position, Quaternion.identity);
